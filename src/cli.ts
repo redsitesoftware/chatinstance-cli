@@ -18,7 +18,27 @@ program
   .name('chatinstance')
   .description('ChatInstance CLI - AI Aggregator Command Line Interface')
   .version('1.0.0', '-v, --version', 'Display version number')
-  .helpOption('-h, --help', 'Display help for command');
+  .helpOption('-h, --help', 'Display help for command')
+  .configureOutput({
+    writeOut: (str) => {
+      // Custom version output
+      if (str.includes('1.0.0')) {
+        const versionOutput = boxen(
+          chalk.bold.green('ChatInstance CLI') + ' ' + chalk.yellow('v1.0.0') + '\n\n' +
+          chalk.gray('Built by Red Site Software'),
+          {
+            padding: 1,
+            margin: 1,
+            borderStyle: 'single',
+            borderColor: 'cyan'
+          }
+        );
+        process.stdout.write(versionOutput + '\n');
+      } else {
+        process.stdout.write(str);
+      }
+    }
+  });
 
 // Show welcome banner on help
 program.configureHelp({
@@ -26,8 +46,9 @@ program.configureHelp({
     const banner = boxen(
       chalk.bold.green('ChatInstance CLI') + '\n' +
       chalk.gray('AI Aggregator Command Line Interface') + '\n\n' +
-      chalk.yellow('🚀 Chat with multiple AI providers from your terminal') + '\n' +
-      chalk.cyan('   Built by Red Site Software'),
+      chalk.yellow('🚀 Chat with multiple AI providers from your terminal') + '\n\n' +
+      '🐙 ' + chalk.cyan('RedSiteSoftware GitHub') + ' ' + chalk.blue.underline('https://github.com/redsitesoftware') + '\n' +
+      chalk.gray('   Built by Red Site Software'),
       {
         padding: 1,
         margin: 1,

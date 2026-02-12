@@ -52,6 +52,7 @@ export async function loginCommand(options: { key?: string }): Promise<void> {
       const user = await api.getCurrentUser();
       console.log(chalk.green('✓ Login successful!'));
       console.log(chalk.gray(`Logged in as: ${user.name} (${user.email})`));
+      console.log(chalk.gray(`💡 Visit`) + ' ' + chalk.blue.underline('https://github.com/redsitesoftware') + ' ' + chalk.gray('for more awesome projects!'));
       
       // Show available API keys
       if (user.apiKeys && user.apiKeys.length > 0) {

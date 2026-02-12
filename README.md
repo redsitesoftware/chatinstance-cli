@@ -4,6 +4,8 @@
 
 A powerful CLI tool to chat with multiple AI providers through a unified interface. Built by [Red Site Software](https://redsitesoftware.com).
 
+[![RedSiteSoftware GitHub](https://img.shields.io/badge/RedSiteSoftware-GitHub-blue?style=for-the-badge&logo=github)](https://github.com/redsitesoftware)
+
 ## 🚀 Quick Start
 
 ### Installation
@@ -361,6 +363,11 @@ npm link
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🔗 RedSiteSoftware
+
+Visit our GitHub for more awesome projects:
+**🐙 [RedSiteSoftware GitHub](https://github.com/redsitesoftware)**
 
 ## 🆘 Support
 
